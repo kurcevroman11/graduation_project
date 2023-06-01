@@ -41,6 +41,6 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-//test branch2
+//test branch22
 
 }
