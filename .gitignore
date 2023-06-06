@@ -14,3 +14,15 @@ xcuserdata
 /.idea/misc.xml
 /.idea
 >>>>>>> 6f039018d180533130c2d3a271471513c13f24c0
+=======
+xcuserdata
+local.properties
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+build
+captures
+>>>>>>> ab489c1abc25124656795804017dce31b379c123
