@@ -1,6 +1,3 @@
-[submodule "shared"]
-	path = shared
-	url = https://github.com/Sebbia/estimate-mobile-shared.git
 [submodule "estimate-mobile-shared"]
 	path = estimate-mobile-shared
 	url = https://github.com/Sebbia/estimate-mobile-shared.git
