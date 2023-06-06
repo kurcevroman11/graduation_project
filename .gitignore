@@ -7,4 +7,10 @@ captures
 .externalNativeBuild
 .cxx
 local.properties
+<<<<<<< HEAD
 xcuserdata
+=======
+/.idea/vcs.xml
+/.idea/misc.xml
+/.idea
+>>>>>>> 6f039018d180533130c2d3a271471513c13f24c0
