@@ -20,16 +20,17 @@ import androidx.compose.ui.graphics.*
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.sebbia.R
+import com.sebbia.Routes
 import com.sebbia.ui.theme.Grey
 
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ProjectSubTask(){
+fun ProjectSubTask(navController: NavHostController){
     val shape = RoundedCornerShape(12.dp)
 
     val image = ImageBitmap.imageResource(R.drawable.background)
@@ -78,17 +79,25 @@ fun ProjectSubTask(){
                                 placeholder = { Text(text = "Краткое описание (100 символов)",
                                     color = Grey)})
                         }
-                        TextButton(onClick = { /*TODO*/ }) {
+                        TextButton(onClick = { navController.navigate(Routes.Comments.route) }) {
                             Text(text = "Подробнее...", color = Color.Black, fontSize = 16.sp)
                         }
                     }
                 }
-                Button(onClick = { /*TODO*/ },
+                Button(onClick = { navController.navigate(Routes.Files.route) },
                     colors = ButtonDefaults.buttonColors(backgroundColor = Grey),
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(shape)) {
                     Text(text = "Файлы", modifier = Modifier.padding(bottom = 5.dp),
+                        fontSize = 20.sp)
+                }
+                Button(onClick = { navController.navigate(Routes.Users.route) },
+                    colors = ButtonDefaults.buttonColors(backgroundColor = Grey),
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(shape)) {
+                    Text(text = "Участники", modifier = Modifier.padding(bottom = 5.dp),
                         fontSize = 20.sp)
                 }
                 Box(modifier = Modifier
@@ -280,14 +289,4 @@ fun ProjectSubTask(){
             }
         }
     }
-
-
-
-
-}
-
-@Preview
-@Composable
-fun k() {
-    ProjectSubTask()
 }

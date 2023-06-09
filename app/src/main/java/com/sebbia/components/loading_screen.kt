@@ -1,4 +1,4 @@
-package com.example.sebbia
+package com.sebbia.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement

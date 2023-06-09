@@ -30,7 +30,7 @@ fun ScreenMain() {
         }
 
         composable(Routes.ProjectSubTask.route) {
-            ProjectSubTask()
+            ProjectSubTask(navController = navController)
         }
 
         composable(Routes.Comments.route) {
@@ -43,6 +43,18 @@ fun ScreenMain() {
 
         composable(Routes.AuthorizationScreen.route) {
             AuthScreen(navController = navController)
+        }
+
+        composable(Routes.Menu.route) {
+            Menu()
+        }
+
+        composable(Routes.Files.route) {
+            Files()
+        }
+
+        composable(Routes.Users.route) {
+            Users()
         }
     }
 }

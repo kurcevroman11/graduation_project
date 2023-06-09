@@ -8,7 +8,6 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
@@ -30,13 +29,12 @@ fun ToolBar() {
             modifier = Modifier.padding(start = 6.dp, end = 6.dp),
             elevation = 0.dp,
         ){
-            IconButton(onClick = { /*TODO*/ }) { Icon(Icons.Filled.ArrowBack, tint = Color(0xFFFFFFFF), contentDescription = "Назад")}
-            Spacer(Modifier.weight(1f, true))
+            Spacer(Modifier.weight(0.5f, true))
             Text(text = "Сайт Nissan", color = Color(0xFFFFFFFF), fontSize = 20.sp, maxLines = 1, overflow = TextOverflow.Ellipsis,
-                modifier = Modifier.width(200.dp))
+                modifier = Modifier.weight(6f))
             Spacer(Modifier.weight(1f, true))
             IconButton(onClick = { /*TODO*/ }) { Icon(Icons.Filled.Search, tint = Color(0xFFFFFFFF), contentDescription = "Поиск")}
-            IconButton(onClick = { /*TODO*/ }) { Icon(Icons.Filled.Menu, tint = Color(0xFFFFFFFF),contentDescription = "Меню")}
+            IconButton(onClick = {  }) { Icon(Icons.Filled.Menu, tint = Color(0xFFFFFFFF),contentDescription = "Меню")}
         }
     }
 }
@@ -58,7 +56,7 @@ fun ToolBarMain() {
             Spacer(Modifier.weight(0.1f, true))
             IconButton(onClick = { /*TODO*/ }) { Icon(Icons.Filled.Add, tint = Color(0xFFFFFFFF), contentDescription = "Создать")}
             Spacer(Modifier.weight(0.1f, true))
-            IconButton(onClick = { /*TODO*/ }) { Icon(Icons.Filled.Menu, tint = Color(0xFFFFFFFF),contentDescription = "Меню")}
+            IconButton(onClick = {  }) { Icon(Icons.Filled.Menu, tint = Color(0xFFFFFFFF),contentDescription = "Меню")}
         }
     }
 }
@@ -73,12 +71,11 @@ fun ToolBarDescription() {
             modifier = Modifier.padding(start = 6.dp, end = 6.dp),
             elevation = 0.dp
         ){
-            IconButton(onClick = {  }) { Icon(Icons.Filled.ArrowBack, tint = Color(0xFFFFFFFF), contentDescription = "Назад")}
             Spacer(Modifier.weight(1f, true))
             Text(text = "Изучение Kotlin Multiply", color = Color(0xFFFFFFFF), fontSize = 20.sp, maxLines = 1, overflow = TextOverflow.Ellipsis,
                 modifier = Modifier.width(200.dp))
             Spacer(Modifier.weight(1f, true))
-            IconButton(onClick = { /*TODO*/ }) { Icon(Icons.Filled.Menu, tint = Color(0xFFFFFFFF),contentDescription = "Меню")}
+            IconButton(onClick = {  }) { Icon(Icons.Filled.Menu, tint = Color(0xFFFFFFFF),contentDescription = "Меню")}
         }
     }
 }
