@@ -3,43 +3,64 @@ package com.sebbia
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import com.sebbia.components.ProjectTask
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.sebbia.components.*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Scaffold(
-                topBar = {
-                    ToolBar()
-                }
-            ){innerPadding ->
-                Image(painter = painterResource(id = R.drawable.background), contentDescription = "Фон", Modifier.fillMaxSize(), contentScale = ContentScale.Crop)
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(paddingValues = innerPadding)
-                ) {
-                    ProjectTask()
-                }
-            }
+           ScreenMain()
         }
     }
 }
 
+@Composable
+fun ScreenMain() {
+    val navController = rememberNavController()
+
+    NavHost(navController = navController, startDestination = Routes.AuthorizationScreen.route) {
+
+        composable(Routes.ProjectTasks.route) {
+            ProjectTask(navController = navController)
+        }
+
+        composable(Routes.ProjectSubTask.route) {
+            ProjectSubTask(navController = navController)
+        }
+
+        composable(Routes.Comments.route) {
+            CommentsScreen()
+        }
+
+        composable(Routes.ProjectScreen.route) {
+            ProjectScreen(navController = navController)
+        }
+
+        composable(Routes.AuthorizationScreen.route) {
+            AuthScreen(navController = navController)
+        }
+
+        composable(Routes.Menu.route) {
+            Menu()
+        }
+
+        composable(Routes.Files.route) {
+            Files()
+        }
+
+        composable(Routes.Users.route) {
+            Users()
+        }
+    }
+}
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    
+
 }
