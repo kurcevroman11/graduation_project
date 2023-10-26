@@ -3,6 +3,10 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
+ext {
+    compose_ui_version = "1.0.0"
+}
+
 android {
     namespace 'com.sebbia'
     compileSdk 33

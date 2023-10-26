@@ -12,7 +12,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.runtime.*
-import com.example.crossplatform.Login
+//import com.example.crossplatform.Login
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,13 +26,13 @@ class MainActivity : ComponentActivity() {
                    var users by remember { mutableStateOf("Loading") }
 
                     LaunchedEffect(true) {
-                        users = try {
-                            Login().login("Sebbia1","123321")
-                            /*Login().getUser().toString()*/
-                        } catch (e: Exception) {
-                            e.localizedMessage ?: "error"
-                            /*emptyList()*/
-                        }
+//                        users = try {
+//                           // Login().login("Sebbia1","123321")
+//                            Login().getUser().toString()
+//                        } catch (e: Exception) {
+//                            e.localizedMessage ?: "error"
+//                            /*emptyList()*/
+//                        }
                     }
 
                     GreetingView(users)
