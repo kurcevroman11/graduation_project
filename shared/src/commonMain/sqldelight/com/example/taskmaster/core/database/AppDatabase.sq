@@ -1,13 +1,9 @@
 CREATE TABLE IF NOT EXISTS AccessTokenEntity  (
-    accessToken TEXT DEFAULT NULL,
-    refreshToken TEXT DEFAULT NULL,
-    scope TEXT DEFAULT NULL,
-    tokenType TEXT DEFAULT NULL,
-    uid TEXT DEFAULT NULL PRIMARY KEY
+    tokenLong TEXT DEFAULT NULL
 );
 
 saveToken:
-INSERT OR REPLACE INTO AccessTokenEntity(accessToken,refreshToken,scope,tokenType,uid)
+INSERT OR REPLACE INTO AccessTokenEntity(tokenLong)
 VALUES ?;
 
 getToken:

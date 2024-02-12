@@ -1,5 +1,5 @@
-package com.vickikbt.devtyme.domain.utils
+package com.example.taskmaster.domain.utils
 
-//expect class NapierInit constructor() {
-//    fun init()
-//}
+expect class NapierInit constructor() {
+    fun init()
+}

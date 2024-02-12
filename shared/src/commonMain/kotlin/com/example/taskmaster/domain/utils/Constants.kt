@@ -1,4 +1,4 @@
-package com.vickikbt.devtyme.domain.utils
+package com.example.taskmaster.domain.utils
 
 object Constants {
 

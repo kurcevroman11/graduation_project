@@ -51,6 +51,7 @@ kotlin {
                     api(ktorSerializationKotlinxJson)
                     api(ktorClientContentNegotiation)
                     api(ktorClientLogging)
+                    api(ktorSerialization)
                 }
 
                 // Logback for ktor logging
@@ -87,8 +88,17 @@ kotlin {
                 }
 
                 // Image Loading
-                api(Deps.Github.imageLoader)
+                api(Deps.Io.Github.imageLoader)
                 implementation(Deps.ArkIvanov.Essenty.lifecycle)
+
+                // Common Settings
+                with(Deps.Com.Russhwolf){
+                    api(multiplatformSettings)
+                    api(com.example.taskmaster.Deps.Com.Russhwolf.multiplatformSettings)
+                }
+
+                // Logging
+                api(Deps.Io.Napier.napier)
             }
         }
         val commonTest by getting {
@@ -100,12 +110,20 @@ kotlin {
             dependencies {
                 // Ktor
                 implementation(Deps.Io.Ktor.ktorClientAndroid)
+                implementation(Deps.Io.Ktor.ktorClientOkHttp)
+
+                // Coroutines
+                implementation(Deps.Org.JetBrains.Kotlinx.coroutinesAndroid)
 
                 // SqlDelight
                 implementation(Deps.CashApp.SQLDelight.androidDriver)
 
                 // Koin
                 implementation(Deps.Koin.android)
+
+                // Compose
+                implementation(Deps.Org.JetBrains.Compose.composePreview)
+
             }
         }
         val androidUnitTest by getting
@@ -131,6 +149,7 @@ kotlin {
             dependsOn(iosTest)
         }
     }
+
 
     tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "11"

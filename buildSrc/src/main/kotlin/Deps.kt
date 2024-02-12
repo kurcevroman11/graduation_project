@@ -5,8 +5,12 @@ object Deps {
         object JetBrains {
             object Kotlinx {
                 const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
-
+                const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
                 const val kotlinxSerializationJson = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.serialization}"
+            }
+
+            object Compose {
+                const val composePreview = "org.jetbrains.compose.ui:ui-tooling-preview:${Versions.compose}"
             }
 
             object KotlinWrappers {
@@ -22,12 +26,24 @@ object Deps {
             const val ktorSerializationKotlinxJson = "io.ktor:ktor-serialization-kotlinx-json:${Versions.ktor}"
             const val ktorClientContentNegotiation = "io.ktor:ktor-client-content-negotiation:${Versions.ktor}"
             const val ktorClientLogging = "io.ktor:ktor-client-logging:${Versions.ktor}"
+            const val ktorClientOkHttp = "io.ktor:ktor-client-okhttp:${Versions.ktor}"
+            const val ktorClientAuth = "io.ktor:ktor-client-auth:${Versions.ktor}"
+            const val ktorSerialization = "io.ktor:ktor-client-serialization:${Versions.ktor}"
+//            const val ktoriOS = "io.ktor:ktor-client-ios:${Versions.ktor}"
 
             // Engines
             const val ktorClientAndroid = "io.ktor:ktor-client-android:${Versions.ktor}"
             const val ktorClientDarwin = "io.ktor:ktor-client-darwin:${Versions.ktor}"
             const val ktorClientJava = "io.ktor:ktor-client-java:${Versions.ktor}"
             const val ktorClientJs = "io.ktor:ktor-client-js:${Versions.ktor}"
+        }
+
+        object Github {
+            const val imageLoader = "io.github.qdsfdhvh:image-loader:${Versions.imageLoader}"
+        }
+
+        object Napier {
+            const val napier = "io.github.aakira:napier:${Versions.napier}"
         }
     }
 
@@ -53,6 +69,9 @@ object Deps {
         const val core = "io.insert-koin:koin-core:${Versions.koin}"
         const val test = "io.insert-koin:koin-test:${Versions.koin}"
         const val android = "io.insert-koin:koin-android:${Versions.koin}"
+
+        // Перенести в отельный файл для android
+        const val koinCompose = "io.insert-koin:koin-androidx-compose:${Versions.koin}"
     }
 
     object ArkIvanov {
@@ -72,7 +91,12 @@ object Deps {
         }
     }
 
-    object Github {
-        const val imageLoader = "io.github.qdsfdhvh:image-loader:${Versions.imageLoader}"
+    object Com {
+        object Russhwolf {
+            const val multiplatformSettings =
+                "com.russhwolf:multiplatform-settings-no-arg:${Versions.multiplatformSettings}"
+            const val multiplatformSettingsCoroutines =
+                "com.russhwolf:multiplatform-settings-coroutines:${Versions.multiplatformSettings}"
+        }
     }
 }

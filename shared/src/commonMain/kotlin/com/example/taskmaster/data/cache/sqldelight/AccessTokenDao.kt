@@ -1,10 +1,10 @@
 package com.example.taskmaster.data.cache.sqldelight
 
-
 import app.cash.sqldelight.coroutines.asFlow
 import com.example.taskmaster.core.database.AccessTokenEntity
 import com.example.taskmaster.core.database.AppDatabaseQueries
 import com.example.taskmaster.domain.utils.DatabaseDriverFactory
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class AccessTokenDao constructor(private val databaseDriverFactory: DatabaseDriverFactory) {
@@ -27,7 +27,7 @@ class AccessTokenDao constructor(private val databaseDriverFactory: DatabaseDriv
      * Returns all data store in access token entity table in SQLDelight database
      * as a flow
      */
-    val getToken = appDatabase.getToken().asFlow().map { it.executeAsOneOrNull() }
+    val getToken: Flow<AccessTokenEntity?> = appDatabase.getToken().asFlow().map { it.executeAsOneOrNull() }
 
     /**
      * Deletes all data in access token entity table in SQLDelight database

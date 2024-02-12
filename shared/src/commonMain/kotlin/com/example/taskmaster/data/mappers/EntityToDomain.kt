@@ -1,14 +1,10 @@
-package com.vickikbt.devtyme.data.mappers
+package com.example.taskmaster.data.mappers
 
-import com.vickikbt.devtyme.data.cache.sqldelight.AccessTokenEntity
-import com.vickikbt.devtyme.domain.models.AccessToken
+import com.example.taskmaster.core.database.AccessTokenEntity
+import com.example.taskmaster.domain.models.AccessToken
 
 internal fun AccessTokenEntity.toDomain(): AccessToken {
     return AccessToken(
-        accessToken = this.accessToken,
-        refreshToken = this.refreshToken,
-        scope = this.scope,
-        tokenType = this.tokenType,
-        uid = this.uid
+        tokenLong = this.tokenLong,
     )
 }
