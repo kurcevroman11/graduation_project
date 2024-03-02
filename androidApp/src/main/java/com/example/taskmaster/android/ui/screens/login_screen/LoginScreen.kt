@@ -29,6 +29,7 @@ fun LoginScreen(viewModel: LoginViewModel = getViewModel()) {
     Napier.e("Is loading: ${isLoading.value}")
 
     viewModel.fetchUserToken("admin", "admin124")
+    viewModel.getTask()
 }
 
 //fun onResume(context: Context, viewModel: LoginViewModel) {

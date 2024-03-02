@@ -1,6 +1,7 @@
 package com.example.taskmaster.data.network
 
 import com.example.taskmaster.data.network.models.AccessTokenDto
+import com.example.taskmaster.data.network.models.TaskDTO
 import io.ktor.client.*
 import io.ktor.client.call.body
 import io.ktor.client.call.receive
@@ -23,7 +24,7 @@ class ApiServiceImpl constructor(private val httpClient: HttpClient) : ApiServic
     // Запрос на получение токена
     override suspend fun fetchUserToken(login: String, password: String): AccessTokenDto? {
         return try {
-            val response: HttpResponse = httpClient.post("https://3988-176-59-79-163.ngrok-free.app/login") {
+            val response: HttpResponse = httpClient.post("https://c937-176-59-81-68.ngrok-free.app/login") {
                 contentType(ContentType.Application.Json)
                 setBody(LoginRequest(login, password))
             }
@@ -47,4 +48,30 @@ class ApiServiceImpl constructor(private val httpClient: HttpClient) : ApiServic
             null
         }
     }
+
+    override suspend fun fetchTaskDto(): TaskDTO? {
+        return try {
+            val response: HttpResponse = httpClient.get(" https://c937-176-59-81-68.ngrok-free.app/task/project")
+            if (response.status.isSuccess()) {
+                response.body<TaskDTO>()
+            } else {
+                println("Server returned error status: ${response.status}")
+                null
+            }
+        } catch (e: ServerResponseException) {
+            println("500 error: ${e.message}")
+            null
+        } catch (e: ClientRequestException) {
+            println("400 error: ${e.message}")
+            null
+        } catch (e: RedirectResponseException) {
+            println("300 error: ${e.message}")
+            null
+        } catch (e: Exception) {
+            println("Error: ${e.message}")
+            null
+        }
+    }
+
+
 }
